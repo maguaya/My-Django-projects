@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+ <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+	<title>Students Register</title>
+</head>
+<body>
+	<button><a href="/students/add">Add students</a></button>
+	
+
+	<div class="container">
+
+	<table class="table">
+		<tr>
+		<th>First name</th>
+		<th>last name</th>
+		<th>Email</th>
+		<th>More details</th>
+		<th>Edit details</th>
+		</tr>
+		{%for students in students %}
+     <tr>
+     	<td>{{students.first_name}}</td>
+     	<td>{{students.last_name}}</td>
+     	<td>{{students.email}}</td>
+     	<td><a href="/students/detail/{{students.pk}}/">More detail</a></td>
+     	<td><a href="/students/edit/{{students.pk}}/">Edit detail</a></td>
+    </tr>
+    {%endfor%}	
+	</table>
+   
+</body>
+</html>
+

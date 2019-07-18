@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+</head>
+	<title>Course Register</title>
+</head>
+<body>
+	<button><a href="/course/add">Add course</a></button>
+
+
+	<style>
+	.container{
+		background-color:#fff;
+		color: black; 
+
+	}
+	</style>
+	<div class="container">
+	<table class="table">
+		
+		<tr>
+		<th>Name</th>
+		<th>Duration months</th>
+		<th>Course number</th>
+		<th>Description</th>
+		<th>Teacher</th>
+		
+		</tr>
+		 {% for course in course %}
+		<tr>
+			<td>{{course.name}}</td>
+			<td>{{course.duration_months}}</td>
+			<td>{{course.Course_number}}</td>
+			<td>{{course.description}}</td>
+			<td>{{course.teacher}}</td>
+			<td><a href="/course/detail/{{course.pk}}">More details</a></td>
+		    <td><a href="/course/edit/{{course.pk}}">Edit details</a></td>
+			
+		</tr>
+		{% endfor %}
+		
+	</table>
+
+</body>
+</html>
