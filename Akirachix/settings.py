@@ -32,6 +32,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'registration',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -43,6 +44,7 @@ INSTALLED_APPS = [
     'course',
     'api',
     'rest_framework',
+    'core',
 ]
 
 MIDDLEWARE = [
@@ -127,5 +129,7 @@ STATIC_URL = '/static/'
 
 MEDIA_URL ='/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR,'students/media')
+ACCOUNT_ACTIVATION_DAYS = 30
+LOGIN_REDIRECT = "/"
 
 django_heroku.settings(locals())
